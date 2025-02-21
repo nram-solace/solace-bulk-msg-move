@@ -18,13 +18,13 @@ See sample-configs-*
 ### Moving messages between Queues
 
 ``` sh
-▶ python3 scripts/move-queue-msgs.py --config config/sample-config-local.yaml            
+▶ python3 bulk-msg-move.py --config sample-config-local.yaml            
 
-move-queue-msgs-1.0 Starting
+bulk-msg-move-1.0 Starting
 
-Reading user config file  : config/sample-config-local.yaml
+Reading user config file  : sample-config-local.yaml
 Reading system config file: config/system.yaml
-Opening log file for move-queue-msgs : ./logs/move-queue-msgs-20240322-163651.log
+Opening log file for bulk-msg-move : ./logs/bulk-msg-move-20240322-163651.log
 moving Msgs from Queue DMQ.TestQ -> TestQ in VPN default
 [1] Got 100 messages from queue DMQ.TestQ
 ...
@@ -40,13 +40,13 @@ Done moving messages.
  ## Copying messages between Queues
 
 ``` sh
-▶ python3 scripts/move-queue-msgs.py --config config/sample-config-local.yaml --copy-only
+▶ python3 bulk-msg-move.py --config sample-config-local.yaml --copy-only
 
-move-queue-msgs-1.0 Starting
+bulk-msg-move-1.0 Starting
 
-Reading user config file  : config/sample-config-local.yaml
+Reading user config file  : sample-config-local.yaml
 Reading system config file: config/system.yaml
-Opening log file for move-queue-msgs : ./logs/move-queue-msgs-20240322-163229.log
+Opening log file for bulk-msg-move : ./logs/bulk-msg-move-20240322-163229.log
 copying Msgs from Queue DMQ.TestQ -> TestQ in VPN default
 [1] Got 100 messages from queue DMQ.TestQ
 
