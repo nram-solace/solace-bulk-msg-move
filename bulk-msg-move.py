@@ -4,14 +4,11 @@
 #  Default is to move messages (delete from source queue)
 #  Max Page size is 100 (SEMP limitation?). Can't move more than 100 messages in one run
 #
-# - using common functions to reduce code footprint
+#  The would loop if there are more than PageSize messages.
+#  The script can run forever if there are more than PageSize messages in the source queue
 #
-# TODO:
-#  copy doesn't loop over messages. Just copies the first page of messages
-#  it would loop forever on copy if there are more than PageSize messages otherwise. 
-#
-# Sep 13, 2023
-# Ramesh Natarajan (nram), Solace PSG
+# Ramesh Natarajan (nram), Solace
+# ###########################################################################################
 
 import sys, os
 import argparse
