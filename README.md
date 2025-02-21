@@ -10,6 +10,19 @@ Script to either copy or move messages between queues on a Solace broker. This s
 ## Requirements
 See requirements.txt
 
+## Installing
+
+Using virtual env is optional, but recommended if you want to keep the dependencies isolated
+```
+▶ python3 -m venv venv
+▶ source venv/bin/activate
+```
+
+Check all required modules are in place or install them.
+```
+▶ pip install -r requirements.txt
+```
+
 ## Config
 See sample-configs-*
 
