@@ -22,7 +22,7 @@ from common import YamlHandler
 from common import LogHandler
 
     
-me = "move-queue-msgs"
+me = "bulk-msg-move"
 ver = '1.0'
 
 # Globals
