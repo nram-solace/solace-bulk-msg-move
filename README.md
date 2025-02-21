@@ -1,23 +1,21 @@
-# Copy or Move messages between Queues
+# Copy or Move messages between Solace Queues
 
-Script to either copy or move messages between queues on a Solace broker.
+Script to either copy or move messages between queues on a Solace broker. This script uses combination SEMP monitor and config APIs.
 
-## LIMITATION
-- Copy doesn't loop over messages. If there are more that PageSize (default: 100) messages in the Queue, only first PageSize worth of messages will be copied.
+## References
+- [Solace PubSub+](https://docs.solace.com/Get-Started/get-started-lp.htm)
+- [SEMP](https://docs.solace.com/Admin/SEMP/Using-SEMP.htm)
+
+
+## Requirements
+See requirements.txt
 
 ## Config
-See [sample-config](../config/sample-config-local.yaml)
+See sample-configs-*
 
-``` yaml
-# Needed only for move-queue-msgs
-queues:
-   source: DMQ.TestQ
-   destination: TestQ
-```
+# Running
 
-## Running
-
-## Moving messages between Queues
+### Moving messages between Queues
 
 ``` sh
 ▶ python3 scripts/move-queue-msgs.py --config config/sample-config-local.yaml            
