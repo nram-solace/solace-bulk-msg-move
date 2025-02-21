@@ -6,13 +6,12 @@ Script to either copy or move messages between queues on a Solace broker. This s
 - [Solace PubSub+](https://docs.solace.com/Get-Started/get-started-lp.htm)
 - [SEMP](https://docs.solace.com/Admin/SEMP/Using-SEMP.htm)
 
-
 ## Requirements
 See requirements.txt
 
 ## Installing
 
-Using virtual env is optional, but recommended if you want to keep the dependencies isolated
+Using virtual env is optional, but recommended if you want to keep the dependencies isolated.
 ```
 ▶ python3 -m venv venv
 ▶ source venv/bin/activate
@@ -49,8 +48,7 @@ Done moving messages.
 2099 messages moved from DMQ.TestQ -> TestQ
  ```
 
-
- ## Copying messages between Queues
+ ### Copying messages between Queues
 
 ``` sh
 ▶ python3 bulk-msg-move.py --config sample-config-local.yaml --copy-only
