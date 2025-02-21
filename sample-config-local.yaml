@@ -1,0 +1,28 @@
+---
+# Router URL and credentials - Required
+router:
+   # label: used for dir name and logging 
+   label: "localhost" 
+   sempUrl: "http://localhost:8088"
+   sempUser: "admin"
+   sempPassword: "admin"
+
+# VPN name - Required
+vpn:
+   msgVpnNames: 
+   - default
+
+# Required for for move msgs
+queues:
+   source: Queue1
+   destination: Queue2
+   
+# filter to export 
+applyFilter:
+
+# template values for creating artifacts 
+templates:
+
+# internal stuff - don't change
+internal:
+   systemConfig: "config/system.yaml"

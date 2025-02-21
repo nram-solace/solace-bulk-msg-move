@@ -1,0 +1,28 @@
+---
+# Router URL and credentials - Required
+router:
+   # label: used for dir name and logging 
+   label: "cloud-nram-test"
+   sempUrl: "https://nram-test.messaging.solace.cloud:943"
+   sempUser: "nram-test-admin"
+   sempPassword: "*****"
+
+# VPN to work with
+vpn:
+   msgVpnNames: 
+   - nram-test
+
+# Required for for move msgs
+queues:
+   source: test
+   destination: test2
+   
+# filter to export 
+applyFilter:
+
+# template values for creating artifacts 
+templates:
+
+# internal stuff - don't change
+internal:
+   systemConfig: "config/system.yaml"
