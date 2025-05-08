@@ -21,6 +21,10 @@ from common import SempHandler
 from common import YamlHandler
 from common import LogHandler
 
+# suppress TLS warnings
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
     
 me = "bulk-msg-move"
 ver = '1.0'

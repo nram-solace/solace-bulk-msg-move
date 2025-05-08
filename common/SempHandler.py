@@ -80,13 +80,13 @@ class SempHandler:
                 auth=auth,
                 params=params,
                 data=None,
-                verify=True)
+                verify=False)
         else:
             resp = getattr(requests, verb)(url, 
                 headers=hdrs,
                 auth=auth,
                 data=None,
-                verify=True)
+                verify=False)
         #log.info ('SEMP GET returned: {}'.format(resp))
         #log.info ('SEMP GET returned: {}'.format(json.dump(resp, indent=4, sort_keys=True)))
         log.info ('http_get {} returned:\n{}'.format(url,resp))
