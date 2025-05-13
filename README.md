@@ -51,6 +51,18 @@ E.g.:
 cp config/sample-config-cloud.yaml config/nram-test-restq.yaml
 ```
 
+### Generating encoded passwords
+
+You can use tool of your choice, of use online portals like this (https://emn178.github.io/online-tools/base64_encode.html). 
+
+You can also use included script encode-password.sh to encode plain text password to base64 encoding.
+
+``` sh
+▶ bash encode-password.sh my-super-secret-passw0rd
+Original password: my-super-secret-passw0rd
+Encoded  password: ENC:bXktc3VwZXItc2VjcmV0LXBhc3N3MHJk
+```
+
 # Running
 
 ### Moving messages between Queues
@@ -74,7 +86,7 @@ Done moving messages.
 2099 messages moved from DMQ.TestQ -> TestQ
  ```
 
- ### Copying messages between Queues
+### Copying messages between Queues
 
 ``` sh
 ▶ python3 bulk-msg-move.py --config sample-config-local.yaml --copy-only
