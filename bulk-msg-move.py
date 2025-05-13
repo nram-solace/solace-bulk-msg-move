@@ -15,6 +15,7 @@ import argparse
 import pprint
 import json
 from urllib.parse import unquote, quote # for Python 3.7
+import base64  # Add this import at the top with other imports
 
 sys.path.insert(0, os.path.abspath("."))
 from common import SempHandler
@@ -60,6 +61,10 @@ def main(argv):
     print ("Reading user config file  : {}".format(r.config_file))
     yaml_h = YamlHandler.YamlHandler()
     Cfg = yaml_h.read_config_file(r.config_file)
+
+    # Decode the password if it's base64 encoded
+    if "router" in Cfg and "sempPassword" in Cfg["router"]:
+        Cfg["router"]["sempPassword"] = decode_password(Cfg["router"]["sempPassword"])
 
     sys_cfg_file = Cfg["internal"]["systemConfig"]
     print ("Reading system config file: {}".format(sys_cfg_file))
@@ -194,6 +199,16 @@ def copy_or_move_msgs (vpn, src_q, dest_q):
     print (f"\nDone {Prompt} messages.\n{tn} messages {prompted} from {src_q} -> {dest_q}")
     
         
+def decode_password(password):
+    """Decode password if it's base64 encoded (starts with ENC:)"""
+    if password.startswith('ENC:'):  # Only decode if it starts with ENC:
+        try:
+            return base64.b64decode(password[4:]).decode('utf-8')
+        except Exception as e:
+            print(f"Error decoding password: {e}")
+            return password
+    return password  # Return original password if it doesn't start with ENC:
+
 # Program entry point
 if __name__ == "__main__":
     """ program entry point - must be  below main() """
