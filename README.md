@@ -3,27 +3,53 @@
 Script to either copy or move messages between queues on a Solace broker. This script uses combination SEMP monitor and config APIs.
 
 ## References
+
 - [Solace PubSub+](https://docs.solace.com/Get-Started/get-started-lp.htm)
 - [SEMP](https://docs.solace.com/Admin/SEMP/Using-SEMP.htm)
 
 ## Requirements
-See requirements.txt
+
+The scripts have been tested with the following:
+
+- OS
+  - Windows 11
+  - MacOS 15
+  - Linux RH 8
+
+- Solace
+  - 10.8 and 10.11
+
+- Python
+  - Python 3.11 and PIP 25
+
+See requirements.txt for Python module requirements.
 
 ## Installing
 
 Using virtual env is optional, but recommended if you want to keep the dependencies isolated.
-```
+
+``` text
 ▶ python3 -m venv venv
 ▶ source venv/bin/activate
 ```
 
 Check all required modules are in place or install them.
-```
-▶ pip install -r requirements.txt
+
+``` bash
+▶ pip3 install -r requirements.txt
 ```
 
 ## Config
-See sample-configs-*
+
+See config/sample-configs-*
+
+It may be a good idea to copy the sample config file to a different file for each set of Queues requiring message copy or move.
+
+E.g.:
+
+``` bash
+cp config/sample-config-cloud.yaml config/nram-test-restq.yaml
+```
 
 # Running
 
